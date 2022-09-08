@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #002231;
+}
+
+
+div.gameBoard{
+    margin: 50px auto;
+    width: 450px;
+    height: 500px;
+    /* border: 2px solid whitesmoke; */
+    border-radius: 5px;
+}
+
+div.menu{
+    margin-top: 2px;
+    color: whitesmoke;
+    
+}
+
+div.menu > h1.title{
+    display: block;
+    text-align: center;
+    font: bold 1.3rem cursive;
+    text-align: center;
+}
+
+div.menu > span.infos{
+    margin-top: 5px;
+    padding: 5px;
+    display: block;
+    font: bold 1.1rem cursive;
+    text-align: center;
+}
+
+span.score{
+    color: whitesmoke;
+}
+
+.canvas{
+    margin: 15px 25px;
+    border: 2px solid whitesmoke;
+    box-shadow: 0 0 2px wheat;
+    filter: drop-shadow(0 0 1px wheat);
+}
+
+div.gameOverBackGround{
+    display: none;
+    position: absolute;
+    background: #04404056;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;   
+}
+
+div.gameOverBackGround > .gameOverMessage{
+    margin: 150px auto;
+    width: 450px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: #cacaca;
+}
+
+.gameOverMessage > span{
+    display: block;
+    margin: 5px;
+    text-align: center;
+    font: bold 1.8rem monospace;
+    color: #002231;
+}
+
+.gameOverMessage > button{
+    display: block;
+    margin: 50px auto;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font: bold 1.1rem arial;
+    background: #cacaca;
+}
+
+.gameOverMessage > button:hover{
+    background: #002231;
+    color: whitesmoke;
+}
+
+.gameOverMessage > button:active{
+    transform: scale(0.87);
+}
