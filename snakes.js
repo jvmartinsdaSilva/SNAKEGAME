@@ -5,6 +5,7 @@ window.onload = function(){
     const canvas = document.querySelector('.canvas')
     const ctx = canvas.getContext('2d')
     
+    
     let over = false
     let score = 0
     let speed = 1
@@ -38,7 +39,7 @@ window.onload = function(){
         for(let i = 0; i < trail.length; i++){
             ctx.fillRect(trail[i].x*Lpixel, trail[i].y*Lpixel, Lpixel,Lpixel)
             if(trail[i].x == positionX && trail[i].y == positionY){
-                if(tail != 2){ //O metodo if evita que o game-over aconteça mesmo sem começar o jogo
+                if(tail != 2){ //Evita que o game-over aconteça antes de começar o jogo
                     gameover()                 
                 } else{
                     return
@@ -96,8 +97,7 @@ window.onload = function(){
                     appleX = apX
                     appleY = apY
                     ctx.fillStyle = '#D92525'
-                    ctx.fillRect(appleX*Lpixel, appleY*Lpixel,Lpixel,Lpixel)
-        
+                    ctx.fillRect(appleX*Lpixel, appleY*Lpixel,Lpixel,Lpixel)   
             }         
         }  
     } 
@@ -112,12 +112,14 @@ window.onload = function(){
     }
 
     const gameover = () => {
-        over = true
-        tail = 0
 
-        gameOverBackGround.style.display = 'flex'
-        resetSnake()
-        btnReset.addEventListener('click', resetGame)
+        setTimeout(() => {
+            over = true
+            tail = 0
+            gameOverBackGround.style.display = 'flex'
+            resetSnake()
+            btnReset.addEventListener('click', resetGame)
+        },150)
     }
 
     const resetSnake = () => {
@@ -129,7 +131,6 @@ window.onload = function(){
     
     const resetGame = () => {
         gameOverBackGround.style.display = 'none'
-
         over = false
         appleX = Math.floor(Math.random()* Lpixel)
         appleY = Math.floor(Math.random()* Lpixel)
